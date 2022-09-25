@@ -27,22 +27,24 @@ struct ideapad_wmi_private {
 };
 
 static const struct key_entry ideapad_wmi_fn_key_keymap[] = {
-	/* FnLock (handled by the firmware) */
+	/* Customizable Lenovo Hotkey (Acts on Windows as macro key) ("star" with 'S' inside) */
+	{ KE_KEY,	0x01, { KEY_MACRO1 } },
+	/* Disable FnLock (handled by the firmware) */
 	{ KE_IGNORE,	0x02 },
-	/* Customizable Lenovo Hotkey ("star" with 'S' inside) */
-	{ KE_KEY,	0x01, { KEY_FAVORITES } },
-    /* Customizable Lenovo Hotkey ("star" with 'S' inside) */
-	{ KE_KEY,	0x04, { KEY_FAVORITES } },
-    /* Snipping ("dashed line" with "scissors") */
-	{ KE_KEY,	0x08, { KEY_SELECTIVE_SCREENSHOT } },
-	/* Dark mode toggle */
-	{ KE_KEY,	0x13, { KEY_PROG1 } },
+	/* Enable FnLock (handled by the firmware) */
+	{ KE_IGNORE,	0x03 },
+	/* Snipping (dashed circle with scissors) */
+	{ KE_KEY,	0x04, { KEY_SELECTIVE_SCREENSHOT } },
+	/* Customizable Lenovo Hotkey ("star" with 'S' inside) (long-press) */
+	{ KE_KEY,	0x08, { KEY_FAVORITES } },
 	/* Sound profile switch */
 	{ KE_KEY,	0x12, { KEY_PROG2 } },
-	/* Lenovo Virtual Background application */
-	{ KE_KEY,	0x28, { KEY_PROG3 } },
+	/* Dark mode toggle */
+	{ KE_KEY,	0x13, { KEY_PROG1 } },
 	/* Lenovo Support */
 	{ KE_KEY,	0x27, { KEY_HELP } },
+	/* Lenovo Virtual Background application */
+	{ KE_KEY,	0x28, { KEY_PROG3 } },
 	{ KE_END },
 };
 
