@@ -5,9 +5,11 @@
  * Supported models:
  * - Lenovo Yoga 9 14IAP7
  * - Lenovo Yoga 9 14ITL5
+ * - Lenovo Thinkbook 16p2
  *
  * Copyright (C) 2022 Philipp Jungkamp <p.jungkamp@gmx.net>
  * Copyright (C) 2022 Ulrich Huber <ulrich@huberulrich.de>
+ * Copyright (C) 2023 Frederick Parotat <frederick@parotat.de>
  */
 
 #define pr_fmt(fmt) KBUILD_MODNAME ": " fmt
@@ -55,6 +57,10 @@ static const struct key_entry ideapad_wmi_fn_key_keymap[] = {
 	{ KE_KEY,	0x27, { KEY_HELP } },
 	/* Lenovo Virtual Background application */
 	{ KE_KEY,	0x28, { KEY_PROG4 } },
+	/* Additional keys for Thinkbook 16p2 */
+	{ KE_KEY,       0x0e, { KEY_PICKUP_PHONE } },
+	{ KE_KEY,       0x0f, { KEY_HANGUP_PHONE } },
+
 	{ KE_END },
 };
 
